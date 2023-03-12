@@ -10,7 +10,6 @@ interface SearchArguments {
 export  default async function Command(props: LaunchProps<{ arguments: SearchArguments }>) {
   const { domain } = props.arguments;
       let url = 'https://login.microsoftonline.com/' + domain  + '/federationmetadata/2007-06/federationmetadata.xml';
-      console.log(url);
       const response = await fetch(url);
       const result = await response.text();
       const index: number = result.indexOf('entityID="https://sts.windows.net/');
