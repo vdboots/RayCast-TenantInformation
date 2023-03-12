@@ -11,13 +11,24 @@
     {
       "name": "copy",
       "title": "Copy",
-      "subtitle": "copy tenantID",
-      "description": "",
-      "mode": "view"
+      "subtitle": "copy Microsoft tenant ID",
+      "description": "copies the microsoft Azure AD tenant id",
+      "mode": "no-view",
+      "arguments": [
+        {
+          "name": "domain",
+          "placeholder": "domainname",
+          "type": "text",
+          "required": true
+        }
+      ]
     }
   ],
   "dependencies": {
-    "@raycast/api": "^1.48.8"
+    "@raycast/api": "^1.48.8",
+    "@raycast/utils": "^1.5.2",
+    "node-fetch": "^3.3.1",
+    "raycast": "^1.0.8"
   },
   "devDependencies": {
     "@raycast/eslint-config": "1.0.5",
