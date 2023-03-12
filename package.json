@@ -2,7 +2,7 @@
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "tenant-information",
   "title": "Tenant information",
-  "description": "get tenant information",
+  "description": "The Microsoft Tenant ID is a unique identifier assigned to a Microsoft 365 tenant. It's often used for administrative and technical purposes, such as configuring Microsoft Graph API permissions or configuring Single Sign-On (SSO) for Microsoft 365.",
   "icon": "command-icon.png",
   "author": "vdboots",
   "owner": "innovative",
