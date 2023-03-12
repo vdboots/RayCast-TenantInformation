@@ -1,5 +1,5 @@
 import {  LaunchProps, Clipboard, showToast, Toast } from "@raycast/api";
-import { usePromise } from "@raycast/utils";
+import { Guid } from "guid-typescript";
 import fetch from 'node-fetch';
 
 
@@ -17,8 +17,13 @@ export  default async function Command(props: LaunchProps<{ arguments: SearchArg
       const size: number = 34
       const resultString: string = result.slice(index + size);
       const resultGuid: string = resultString.substring(0, 36)
-      console.log(resultGuid);
-      await Clipboard.copy(resultGuid);
-      await showToast(Toast.Style.Success, `copied ${resultGuid}`);
+      if(Guid.isGuid(resultGuid))
+      {
+        await Clipboard.copy(resultGuid);
+        await showToast(Toast.Style.Success, `copied ${resultGuid}`);
+      }
+      else{
+        await showToast(Toast.Style.Failure, `tenant not found ${resultGuid}`)
+      }
       return resultGuid;
 }
